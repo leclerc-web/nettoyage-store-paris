@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nettoyage Store – Météo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+<img src="logo.png" alt="logo clar't store" class="icon-title">
+	<h3>Choisissez le bon moment pour nettoyer vos stores</h3>
+    <!-- Section du moment présent -->
+    <div class="current-weather">
+      <div class="weather-icon" id="currentWeatherIcon">☀️</div>
+      <div class="weather-info">
+        <div id="currentTemp">--°C</div>
+        <div id="currentDesc">Chargement...</div>
+      </div>
+    </div>
+
+    <!-- Recommandation de créneau -->
+    <div class="highlight" id="recommendation">
+      Chargement de la meilleure fenêtre...
+    </div>
+
+    <!-- Zone d’onglets -->
+    <div class="tabs" id="tabsContainer"></div>
+    <!-- Contenu d’onglets -->
+    <div id="tabsContentContainer"></div>
+
+    <!-- Bouton refresh -->
+    <button id="refreshBtn">Rafraîchir</button>
+
+    <!-- Petite info-bulle générale -->
+<div class="info-bulle">
+  ℹ️
+  <span class="tooltip-text" id="detailsTooltip">
+    <strong>🔍 Méthodologie de recommandation</strong><br><br>
+
+    🤖 <strong>Données météo analysées</strong> :<br>
+    ▪️ Température (°C)<br>
+    ▪️ Probabilité de précipitation (Pluie)<br>
+    ▪️ Taux d'humidité (%)<br>
+    ▪️ Conditions générales (ciel dégagé, nuages, pluie...)<br><br>
+
+    🧼 <strong>Critères pour recommander un créneau idéal</strong> :<br>
+    ✅ Pas de pluie prévue (🌧️ < 20%)<br>
+    ✅ Température supérieure à 10°C 🌡️<br>
+    ✅ Taux d’humidité raisonnable pour un séchage rapide<br>
+    ✅ Conditions météo globalement stables (☁️ / ☀️)<br><br>
+
+    📊 <strong>Objectif</strong> : garantir un nettoyage efficace, sans risque de pluie ou d'humidité excessive pour éviter les moisissures et optimiser le séchage.<br><br>
+
+    🔗 <em>Données fournies par OpenWeatherMap (prévisions sur 5 jours toutes les 3 heures).</em>
+  </span>
+</div>
+
+
+  <script src="weather.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

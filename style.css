@@ -1,0 +1,189 @@
+/* Corps principal */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #f0f6f9 0%, #daeaf1 100%);
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  width: 420px; /* <-- On élargit ici (était 360px avant) */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Titre */
+h1 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+/* Météo actuelle */
+.current-weather {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.weather-icon {
+  font-size: 3rem;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#currentTemp {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+#currentDesc {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Recommandation */
+.highlight {
+  background: #ffffff;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e0e6ed;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.highlight:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Bouton refresh */
+#refreshBtn {
+  padding: 10px 15px;
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+#refreshBtn:hover {
+  background: #3498db;
+}
+
+/* Info-bulle générale */
+.info-bulle {
+  position: relative;
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 18px;
+  color: #2980b9;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 290px;
+  background-color: #2c3e50;
+  color: #fff;
+  text-align: left;
+  border-radius: 10px;
+  padding: 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.info-bulle:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ------ Onglets ------ */
+
+.tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;   /* permet un scroll horizontal */
+  gap: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px; /* un peu d'espace en bas */
+}
+
+/* Chaque bouton d'onglet */
+.tab-button {
+  flex: 0 0 auto;     /* empêche le bouton de se réduire */
+  white-space: nowrap;/* texte sur une seule ligne */
+  padding: 6px 12px;
+  background: #bdc3c7;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Onglet actif */
+.tab-button.active {
+  background: #2980b9;
+  color: #fff;
+}
+
+/* Contenu d’onglet : masqué par défaut */
+.tab-content {
+  display: none;
+  margin-bottom: 15px;
+}
+
+/* Afficher si actif */
+.tab-content.active {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+/* Carte de prévision */
+.forecast-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.icon-title {
+  height: 100px;
+  display: block;
+  margin-top: 10px;  /* ✅ Ajoute 10px en haut */
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
